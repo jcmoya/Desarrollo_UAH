@@ -300,7 +300,7 @@ Para sacarlo mediante web3 usaré la función:
 
 web3.eth.abi.encodeFunctionSignature(functionName);
 
-![Inicializar Blockchain](Imagenes/Fresultado_funcion_identificado.jpg) 
+![Inicializar Blockchain](Imagenes/resultado_funcion_identificado.jpg) 
 
 Referencias:
 
