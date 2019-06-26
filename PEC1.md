@@ -304,10 +304,12 @@ web3.eth.abi.encodeFunctionSignature(functionName);
 
 Referencias:
 
-https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
-https://github.com/ethereum/go-ethereum/issues/15112
-https://medium.com/blockchainbistro/set-up-a-private-ethereum-blockchain-and-deploy-your-first-solidity-smart-contract-on-the-caa8334c343d
-https://github.com/ethereum/go-ethereum/wiki/Connecting-to-the-network
-https://web3py.readthedocs.io
+https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc  
+https://github.com/ethereum/go-ethereum/issues/15112  
+https://medium.com/blockchainbistro/set-up-a-private-ethereum-blockchain-and-deploy-your-first-solidity-smart-contract-on-the-caa8334c343d  
+
+https://github.com/ethereum/go-ethereum/wiki/Connecting-to-the-network  
+https://web3py.readthedocs.io  
 https://web3js.readthedocs.io/en/1.0/web3-eth-abi.html#encodefunctionsignature
-https://medium.com/@piyopiyo/how-to-get-ethereum-encoded-function-signatures-1449e171c840
+https://medium.com/@piyopiyo/how-to-get-ethereum-encoded-function-signatures-1449e171c840  
+
