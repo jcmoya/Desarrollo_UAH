@@ -1,5 +1,5 @@
-#PEC 1
-#Diseño y Desarrollo
+#PEC 1 
+#Diseño y Desarrollo 
 ##Ejercicio 1 (2 puntos)
 **Construya y configure su propia blockchain a partir de un archivo génesis que usted mismo debe definir. Se recomienda el uso del cliente Geth. Cree una cuenta mediante el cliente Geth. Consiga su propio Ether a partir de la minería.**
 
