@@ -1,6 +1,7 @@
-#PEC 1 
-#Diseño y Desarrollo 
-##Ejercicio 1 (2 puntos)
+#PEC 1  
+#Diseño y Desarrollo  
+##Ejercicio 1 (2 puntos)  
+
 **Construya y configure su propia blockchain a partir de un archivo génesis que usted mismo debe definir. Se recomienda el uso del cliente Geth. Cree una cuenta mediante el cliente Geth. Consiga su propio Ether a partir de la minería.**
 
 
@@ -86,8 +87,8 @@ Saber cuantos Ethers tienes en una cuenta concreta en weis:
 > web3.fromWei(eth.getBalance(eth.accounts[1]),"ether")
 540
 ```
-##Ejercicio 2 (2 puntos)
-**A partir del ejercicio anterior, cree una nueva cuenta en su blockchain.
+##Ejercicio 2 (2 puntos)  
+**A partir del ejercicio anterior, cree una nueva cuenta en su blockchain.  
 Realice mediante el propio cliente Geth una transferencia de 1 Ether entre dos cuentas de esta blockchain.**
 
 Enviar 1 Ether a la cuenta
@@ -140,7 +141,7 @@ truffle(development)> web3.eth.getBalance('0x9E43AC5eEcfd6319fcA911300A66818F8c5
 '101000000000000000000'
 
 ```
-##Ejercicio 3 (2 puntos)
+##Ejercicio 3 (2 puntos)  
 **Inicie la sincronización de la red Rinkeby en su dispositivo (se recomienda ésta frente a Ropsten debido al tamaño de la misma y la velocidad de sincronización). Para la realización de este ejercicio no necesita una sincronización completa del nodo.
 Obtenga el address correspondiente al bloque génesis de la red Rinkeby mediante
 la consola del cliente Geth y demuestre cómo lo ha obtenido. No use la función getBlock(...)​**
