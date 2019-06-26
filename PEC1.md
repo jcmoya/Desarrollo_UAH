@@ -20,14 +20,14 @@ En el estaran enumeradas la caracteristicas principales de esta blockchain:
 "gasLimit"   : "0x8970000"
 }
 ```
- - Creas una carpeta donde se van a ir guardando los bloques, y ejecutas el cliente geth pasandole como parametro el lugar donde dejar los bloques y el json con el primer bloque
+ - Creas una carpeta donde se van a ir guardando los bloques. Ejecutas el cliente geth pasándole como parámetro: el lugar donde dejar los bloques y el json con el primer bloque génesis.
 ```
 jules@jules-VirtualBox:~/BlockChainJulio$ mkdir newBlockchain
 jules@jules-VirtualBox:~/BlockChainJulio$ geth --datadir newBlockchain init Genesis.json
 ```
 ![Inicializar Blockchain](Imagenes/IniBloqueGenesis.png)  
 
-Lanzar la BLockchain:
+Lanzas la BLockchain:
 ```
 jules@jules-VirtualBox:~/BlockChainJulio$ geth --port 3000 --networkid 38343 --nodiscover --datadir=./newBlockchain --maxpeers=0  --rpc --rpcport 8543 --rpcaddr 127.0.0.1 --rpccorsdomain "*" --rpcapi "eth,net,web3,personal,miner"
 ```
@@ -35,7 +35,7 @@ jules@jules-VirtualBox:~/BlockChainJulio$ geth --port 3000 --networkid 38343 --n
 ![Inicializar Blockchain](Imagenes/IniciioBlockchain.png)  
 
 
-Luego conectas geth con la blockchain desde otro terminal
+Luego, conectas geth con la blockchain desde otro terminal:
 ```
 jules@jules-VirtualBox:~/BlockChainJulio$ geth attach http://127.0.0.1:8543
 Welcome to the Geth JavaScript console!
@@ -57,12 +57,12 @@ Para desbloquear la cuenta:
 > personal.unlockAccount(web3.eth.coinbase, "seed", 15000)
 true
 ```
-Para desbloquear la mia nueva
+Para desbloquear la mía nueva
 ```
 > personal.unlockAccount(eth.accounts[1], "jules", 15000)
 true
 ```
-Para minar
+Para minar y poder obtener moneda
 ```
 miner.start(2) //Como argumento le pasas el numero de hilos que vas  
 ```
@@ -74,9 +74,7 @@ adjudicar a la minieria
 50000000000000000000
 ```
 
-
-
-Para saber el numero de cuentas:
+Para saber el numero de cuentas disponibles (En este momento tengo 3)
 ```
 > eth.accounts
 ["0x685b3c24ae853da943962980dc2f56488309cf6f", "0x58cb1c52d776fba23660c7eb4490dc3ec9442288", "0x79647399c03f430a6eb3d3e32e8b4ad2c5b3eb47"]
@@ -100,7 +98,7 @@ Enviar 1 Ether a la cuenta
 0
 ```
 
-//Hasta que no se genere un bloque no se guardara la transaccion, por eso es necesario minar un bloque:
+//Hasta que no se genere un bloque no se guardara la transacción, por eso es necesario minar un bloque:
 ```
 > miner.start(1)
 null
@@ -158,7 +156,7 @@ at block: 4621418 (Tue, 25 Jun 2019 10:24:31 CEST)
  datadir: /home/jules/.ethereum/rinkeby
  modules: admin:1.0 clique:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
 
-> admin.nodeInfo //Obtienes la info del nodo que estoy corriendo de Rinkey , en esa info aparece la adressd del bloque genesis:
+> admin.nodeInfo //Obtienes la info del nodo que estoy corriendo de Rinkey , en esa info aparece la adress del bloque genesis:
 
 {
   enode: "enode://8ecb80998231a33aff9db3754e9111115e03ede3682f9eb20ae07a092a201434bfba35a623611d91bf97d92dbf9cd29ee2a85845c334bf591056e5fff336be30@83.56.36.83:30303?discport=43423",
@@ -198,17 +196,19 @@ at block: 4621418 (Tue, 25 Jun 2019 10:24:31 CEST)
 
 - Obtenga sólo la cantidad de peers a los que está conectado. Demuestre cómo lo ha obtenido.
 ```
+Mediante el comando:
 > net.peerCount
 1
 
 ```
 - Obtenga información acerca de los peers a los que está conectado e indique el hash del bloque actual de éstos.
 Con admin.peers //saber los nodos a los que estoy conectado
+enodes de la red de Rinkeby a los que puedo conectarme, en este momento sólo uno:
 
 ![Inicializar Blockchain](Imagenes/Admin_peers.jpg) 
 
-enodes de la red de Rinkeby a los que puedo conectarme, en este momento sólo uno:
 
+Enodes disponibles (sacado de internet)
 "enode://a24ac7c5484ef4ed0c5eb2d36620ba4e4aa13b8c84684e1b4aab0cebea2ae45cb4d375b77eab56516d34bfbd3c1a833fc51296ff084b770b94fb9028c4d25ccf@52.169.42.101:30303", // IE
 	"enode://343149e4feefa15d882d9fe4ac7d88f885bd05ebb735e547f12e12080a9fa07c8014ca6fd7f373123488102fe5e34111f8509cf0b7de3f5b44339c9f25e87cb8@52.3.158.184:30303",  // INFURA
 	"enode://b6b28890b006743680c52e64e0d16db57f28124885595fa03a562be1d2bf0f3a1da297d56b13da25fb992888fd556d4c1a27b1f39d531bde7de1921c90061cc6@159.89.28.211:30303", // AKASHA
