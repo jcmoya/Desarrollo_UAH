@@ -69,8 +69,41 @@ Ahora hacemos el Resolver del dominio que hemos adquirido //Esta parte no me que
 Unlock account 0xa6be4ff596c2cad0f17e34655a9b421e435117f1
 Passphrase: 
 true
+
+He desplegado un contrato usando REMIX cuya transaccion es la siguiente:
+publicResolver = resolverContract.at("0x692a70d2e424a56d2c6c27aa97d1a86395877b3a")
+
+Imagen:REMIX_eje.jpg
+
+Ahora le asigmamos esa direccion del contrato al dominio que he cogido
+
+> personal.unlockAccount(eth.accounts[0])
+Unlock account 0xa6be4ff596c2cad0f17e34655a9b421e435117f1
+Passphrase: 
+true
 > ens.setResolver(namehash('moya_gonzalez.test'),publicResolver.address,{from:eth.accounts[0], gas: 100000})
-"0x54ab68fc6637c0c4871e6625c9e59ad1558345de62912e7f490a49996e80f76e"
-> 
+"0xe0271b967a85ebbb5a0d4d008284e5e93b7cc1c6c86299f8e762bc607d5fba49"
+
 Esta ultima transaccion no he podido verificarla en Etherscan, quizas un poco mas tarde aparezca
+
+PAra verificar el resolver, y que el contrato apunta al dominio:
+> ens.resolver(namehash("moya_gonzalez.test"))
+"0x5d20cf83cb385e06d2f2a892f9322cd4933eacdc"
+
+Tambien se puede usar el resolver para apuntar a una cuenta, de ese modo es mas facil poder realizar pagos, ya que el domnio que he cogido seria mi cuenta:
+
+> personal.unlockAccount(eth.accounts[0])
+Unlock account 0xa6be4ff596c2cad0f17e34655a9b421e435117f1
+Passphrase: 
+true
+> publicResolver.setAddr(namehash("moya_gonzalez.test"), eth.accounts[0], {from: eth.accounts[0]})
+"0x9c8b91544849f555219c3034f9a2160b0a9eeb830a6eed924e597999395cf11c"
+
+
+
+
+
+//Referencias
+https://michalzalecki.com/register-test-domain-with-ens/
+https://medium.com/@codeAMT/registering-test-domains-for-your-dapps-65da98d5386f
 
