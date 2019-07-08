@@ -19,9 +19,9 @@ Rinkeby.
 debe alojarse en GitHub.
 
 Variando el fichero .html podriamos añadir nuevas etiquetas o modificar la que ya existe para añadir mi nombre:
-![Inicializar Blockchain](Imagenes/FicheroHTML.png)  
+![Html](Imagenes/FicheroHTML.png)  
 
-![Inicializar Blockchain](Imagenes/Julios_Pet_Shop.png) 
+![web Jules](Imagenes/Julios_Pet_Shop.png) 
 
 Se sube el proyecto de Pet-Shop a mi Github
 
@@ -81,7 +81,7 @@ Check out some of the other files in this directory:
   ./security-notes
 
 
-Para poder dejar a ipfs corriendo por debajo lo ejecutamos como un servicio daemon
+Para poder dejar a ipfs corriendo por debajo ejecutamos ipfs como un servicio daemon que va a estar corriendo por debajo:
 
 jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs daemon
 Initializing daemon...
@@ -119,13 +119,14 @@ jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs swarm peers
 
 
 Para añadir el proyecto pet-shop, con el siguiente comando, seguidamente se van añadiendo los hasesh resultantes a los ficheros que he subido.
-Hay que añadir en la misma carpeta todos los ficheros que ejecuta la web, los contracts, los .js y las imagenes.
-Ademas hay que variar el fichero index.html para que no tenga que ir a buscar los .js a ninguna carpeta
+Hay que añadir en la misma carpeta todos los ficheros que ejecuta la web, los .json de lo contracts, los .js y las imagenes.
+Añadir la carpeta src.
+Ademas hay que variar el fichero index.html para que no tenga que ir a buscar los .js a ninguna carpeta y el app.js de la misma forma.
 
 jules@jules-VirtualBox:~/Escritorio/pet-shop-tutorial$ ipfs add -r src/
 added QmPDrjTZwqSWguzPoK1yZ9gU1DqmvqYkry9c2JioF2avdQ src/Adoption.json
 added QmamE8gJi1SivKxTZ4Porbu2MUc69KVB5safJ2dD6BSHRN src/Migrations.json
-added QmNnzZxahvGWGwKvPAtHjoPkC4kffeTq2oNd1S6g3MvfXM src/app.js
+added QmViWZGPYz8tsgyo4UmxZtoFR2b3jh4KWSttxMxCBXw8fH src/app.js
 added QmYUaCPwvJWiueRXFSTTv8vdedWWzRhRdn8RMw35e7k67u src/bootstrap.min.css
 added QmbrzMumAwEPCoLs6jBdDyHz2TBjpkSFhcCHMT7fBsdFyr src/bootstrap.min.css.map
 added QmNXRFREw7waGtKW9uBUze3PkR9E12HeeAQSkZQSiFUJqo src/bootstrap.min.js
@@ -147,10 +148,44 @@ added QmNwWQdxodkdvnMdBie7WvF3HpPUNAR34NvA4vXR2u9PVw src/truffle-config.js
 added QmZQp29tbdppjqyixxM8L8NjsG4paN4eVW9GxZYicXov9v src/truffle-contract.js
 added QmdTtsVM7KtvycQ68f9M43N4EQKvbd58q8aeAhP2fMz4Di src/web3.min.js
 added Qmb3fJpXVGvUnNeRLC3P5sTXMzjpf5zq4tKt9XjhtYFf1k src/fonts
-added QmSjx5jmX9wBAG2yBJZceSjnRcKEheGMNvkTJZ5g3Qz19m src
+added QmTT89hDJJa3adFKv5g82wCMhBWSLVtho6MKFrCxxNk9VB src
 
 
-EL ultimo hash es el que va a ejecutar el fichero index.html
+
+EL ultimo hash es el que va a ejecutar el fichero index.html, con el que hacer referencia en la url
 
 
 http://localhost:8080/ipfs/QmTT89hDJJa3adFKv5g82wCMhBWSLVtho6MKFrCxxNk9VB/
+
+Para probar que se pueden firmar transacciones desde metamask y probar los contratos que tenia desplegados en Ganache:
+
+
+
+0x9332dae62a9884b56ade8fbbd8f21c21842d23724f893ccbd4fe3fc2282141cf
+
+![App sobre IPFS](Imagenes/ADOPTAR_IPFS_v2.png)
+
+A traves de otro nodo,  Gateway
+ http://gateway.ipfs.io/ipfs/QmTT89hDJJa3adFKv5g82wCMhBWSLVtho6MKFrCxxNk9VB/
+
+
+
+
+
+
+
+Referencias:
+
+https://docs.ipfs.io/introduction/usage/
+https://docs.ipfs.io/guides/examples/websites/
+Para transferir algunos ethers a la cuenta de metamask:
+
+> eth.getBalance(eth.coinbase)
+2999567563000000000
+> web3.eth.sendTransaction({
+......     from: "0xa6be4ff596c2cad0f17e34655a9b421e435117f1",
+......     to: "0x2192a5fC161065ccBbfEBA9D9A46f5b16B455E2c",
+......     value: web3.toWei(1, "ether")
+...... })
+"0x012f2c73c088c943dc49a27146f0d2506488c014a8917781623a5240cf4714d2"
+
