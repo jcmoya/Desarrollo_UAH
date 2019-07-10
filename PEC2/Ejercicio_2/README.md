@@ -1,67 +1,68 @@
 # Ejercicio 2 - IPFS (3 puntos)
-A partir de un truffle project como puede ser la pet-shop utilizada en bloques anteriores.
-*También puede utilizar otro truffle project.
-Haga una pequeña modificación en su frontend para mostrar su nombre al ejecutar la
-aplicación. (Puede editar cualquier parámetro adicional, siempre y cuando el nombre sea
-visible).
-Suba el truffle project a GitHub manteniendo su estructura. (No incluya la carpeta
-node_modules).
-Arranque un daemon de IPFS y aloje la DApp (Proyecto truffle elegido).
-Una vez alojada la DApp, debe ser capaz de utilizar la aplicación al igual que en localhost,
-es decir, firmando transacciones mediante MetaMask.
-Describa todo el procedimiento adjuntando las instrucciones utilizadas y sus outputs,
-además adjunte el hash de IPFS. Se recomienda realizar la carga (o recarga si ya ha
-realizado la carga en IPFS) en una fecha cercana a la entrega. Esto es debido a que si
-realiza la carga en una fecha temprana, puede que el contenido tarde o no llegue incluso
-a cargar. También debe indicar si los contratos están desplegados en Ganache o
-Rinkeby.
-*Se recomienda alojar el contenido a subir en IPFS en una única carpeta, ésta también
-debe alojarse en GitHub.
+*A partir de un truffle project como puede ser la pet-shop utilizada en bloques anteriores.*
+*También puede utilizar otro truffle project. Haga una pequeña modificación en su frontend para mostrar su nombre al ejecutar la*
+*aplicación. (Puede editar cualquier parámetro adicional, siempre y cuando el nombre sea visible).*
+*Suba el truffle project a GitHub manteniendo su estructura. (No incluya la carpeta node_modules).*
+*Arranque un daemon de IPFS y aloje la DApp (Proyecto truffle elegido).*
+*Una vez alojada la DApp, debe ser capaz de utilizar la aplicación al igual que en localhost, es decir, firmando transacciones mediante MetaMask.*
+*Describa todo el procedimiento adjuntando las instrucciones utilizadas y sus outputs,*
+*además adjunte el hash de IPFS. Se recomienda realizar la carga (o recarga si ya ha*
+*realizado la carga en IPFS) en una fecha cercana a la entrega. Esto es debido a que si*
+*realiza la carga en una fecha temprana, puede que el contenido tarde o no llegue incluso*
+*a cargar. También debe indicar si los contratos están desplegados en Ganache o Rinkeby.*
+*Se recomienda alojar el contenido a subir en IPFS en una única carpeta, ésta también debe alojarse en GitHub.*
 
 Variando el fichero .html podriamos añadir nuevas etiquetas o modificar la que ya existe para añadir mi nombre:
+
 ![Html](Imagenes/FicheroHTML.png)  
 
 ![web Jules](Imagenes/Julios_Pet_Shop.png) 
 
-Se sube el proyecto de Pet-Shop a mi Github
+El proyecto Julios Pet Shop puede verse aqui
+[El proyecto Julios Pet Shop puede verse aqui](https://github.com/jcmoya/Desarrollo_UAH/tree/master/PEC2/Ejercicio_2/pet-shop-tutorial "Julio Pet Shop")
 
 ## Instalar IPFS
 
-Descargar el paquete:
+Descargar el paquete, y mediante el terminal:
+```
 https://dist.ipfs.io/#go-ipfs
 
-jules@jules-VirtualBox:~/Descargas$ tar xvfz go-ipfs_v0.4.21_linux-amd64.tar.gz
-go-ipfs/install.sh
-go-ipfs/ipfs
-go-ipfs/LICENSE
-go-ipfs/README.md
-jules@jules-VirtualBox:~/Descargas$ cd go-ipfs
-jules@jules-VirtualBox:~/Descargas/go-ipfs$ sudo ./install.sh 
-[sudo] contraseña para jules: 
+
+jules@jules-VirtualBox:~/Descargas$ tar xvfz 
+go-ipfs_v0.4.21_linux-amd64.tar.gz 
+go-ipfs/install.sh  
+go-ipfs/ipfs  
+go-ipfs/LICENSE  
+go-ipfs/README.md  
+
+jules@jules-VirtualBox:~/Descargas$ cd go-ipfs  
+jules@jules-VirtualBox:~/Descargas/go-ipfs$ sudo ./install.sh  
+[sudo] contraseña para jules:  
 Moved ./ipfs to /usr/local/bin
 
 
 //Requisito tener instalado tb go
 //Despues hay que inicializar ipfs
 
-jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs init
-initializing IPFS node at /home/jules/.ipfs
-generating 2048-bit RSA keypair...done
-peer identity: Qmc9e8hTAiHNUEeaupGLMSxF1t352twgda4XgfxjSs9hGF
+jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs init  
+initializing IPFS node at /home/jules/.ipfs  
+generating 2048-bit RSA keypair...done  
+peer identity: Qmc9e8hTAiHNUEeaupGLMSxF1t352twgda4XgfxjSs9hGF  
 to get started, enter:
 
 	ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
 
 jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
 Hello and Welcome to IPFS!
-
+```
 ██╗██████╗ ███████╗███████╗
 ██║██╔══██╗██╔════╝██╔════╝
 ██║██████╔╝█████╗  ███████╗
 ██║██╔═══╝ ██╔══╝  ╚════██║
 ██║██║     ██║     ███████║
 ╚═╝╚═╝     ╚═╝     ╚══════╝
-
+![Alt text](Imagenes/IPFS_logo.png "IPFS instalado")
+```
 If you're seeing this, you have successfully installed
 IPFS and are now interfacing with the ipfs merkledag!
 
@@ -79,10 +80,10 @@ Check out some of the other files in this directory:
   ./quick-start     <-- usage examples
   ./readme          <-- this file
   ./security-notes
-
+```
 
 Para poder dejar a ipfs corriendo por debajo ejecutamos ipfs como un servicio daemon que va a estar corriendo por debajo:
-
+```
 jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs daemon
 Initializing daemon...
 go-ipfs version: 0.4.21-
@@ -100,7 +101,7 @@ API server listening on /ip4/127.0.0.1/tcp/5001
 WebUI: http://127.0.0.1:5001/webui
 Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
 Daemon is ready
-
+```
 
 //Ahora ya estamos corriendo un nodo de ipfs.
 //Desde otro terminal se pudedn ver a los nodos a los que estoy conectado:
@@ -116,13 +117,13 @@ jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs swarm peers
 .....
 .....
 
-
+```
 
 Para añadir el proyecto pet-shop, con el siguiente comando, seguidamente se van añadiendo los hasesh resultantes a los ficheros que he subido.
 Hay que añadir en la misma carpeta todos los ficheros que ejecuta la web, los .json de lo contracts, los .js y las imagenes.
 Añadir la carpeta src.
 Ademas hay que variar el fichero index.html para que no tenga que ir a buscar los .js a ninguna carpeta y el app.js de la misma forma.
-
+```
 jules@jules-VirtualBox:~/Escritorio/pet-shop-tutorial$ ipfs add -r src/
 added QmPDrjTZwqSWguzPoK1yZ9gU1DqmvqYkry9c2JioF2avdQ src/Adoption.json
 added QmamE8gJi1SivKxTZ4Porbu2MUc69KVB5safJ2dD6BSHRN src/Migrations.json
@@ -150,7 +151,7 @@ added QmdTtsVM7KtvycQ68f9M43N4EQKvbd58q8aeAhP2fMz4Di src/web3.min.js
 added Qmb3fJpXVGvUnNeRLC3P5sTXMzjpf5zq4tKt9XjhtYFf1k src/fonts
 added QmTT89hDJJa3adFKv5g82wCMhBWSLVtho6MKFrCxxNk9VB src
 
-
+```
 
 EL ultimo hash es el que va a ejecutar el fichero index.html, con el que hacer referencia en la url
 
@@ -158,8 +159,6 @@ EL ultimo hash es el que va a ejecutar el fichero index.html, con el que hacer r
 http://localhost:8080/ipfs/QmTT89hDJJa3adFKv5g82wCMhBWSLVtho6MKFrCxxNk9VB/
 
 Para probar que se pueden firmar transacciones desde metamask y probar los contratos que tenia desplegados en Ganache:
-
-
 
 0x9332dae62a9884b56ade8fbbd8f21c21842d23724f893ccbd4fe3fc2282141cf
 
@@ -169,15 +168,12 @@ A traves de otro nodo,  Gateway
  http://gateway.ipfs.io/ipfs/QmTT89hDJJa3adFKv5g82wCMhBWSLVtho6MKFrCxxNk9VB/
 
 
-
-
-
-
-
-Referencias:
+## Referencias:
 
 https://docs.ipfs.io/introduction/usage/
 https://docs.ipfs.io/guides/examples/websites/
+
+
 Para transferir algunos ethers a la cuenta de metamask:
 
 > eth.getBalance(eth.coinbase)

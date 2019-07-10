@@ -90,23 +90,25 @@ true
 He desplegado un contrato usando REMIX cuya transaccion es la siguiente:
 publicResolver = resolverContract.at("0x692a70d2e424a56d2c6c27aa97d1a86395877b3a")
 
-![alt text](Imagenes/REMIX_eje.jpg)
+![alt text](Imagenes/REMIX_EJER1.png)
 
 Ahora le asigmamos esa direccion del contrato al dominio que he cogido
-
+```
 > personal.unlockAccount(eth.accounts[0])
 Unlock account 0xa6be4ff596c2cad0f17e34655a9b421e435117f1
 Passphrase: 
 true
 > ens.setResolver(namehash('moyagonzalez.test'),publicResolver.address,{from:eth.accounts[0], gas: 100000})
 "0x95d8a4f667f0c8b9a24bdfbe22d08a0010c52f3de02636cfe6fa9c7279b0640c"
-
+```
 
 Esta ultima transaccion no he podido verificarla en Etherscan, quizas un poco mas tarde aparezca
 
 PAra verificar el resolver, y que el contrato apunta al dominio:
+```
 > ens.resolver(namehash("moyagonzalez.test"))
 "0x5d20cf83cb385e06d2f2a892f9322cd4933eacdc"
+```
 
 Tambien se puede usar el resolver para apuntar a una cuenta, de ese modo es mas facil poder realizar pagos, ya que el domnio que he cogido seria mi cuenta:
 
@@ -127,17 +129,17 @@ En el servidor de Rinkeby devolvia la traza siguiente:
 WARN [07-07|20:27:42.561] Synchronisation failed, dropping peer    peer=1aabba770181eef1 err="retrieved hash chain is invalid"
 
 parece ser que necesitaba instalar un servicio para mantener el reloj
+```
 jules@jules-VirtualBox:~$ sudo apt-get install ntp
 jules@jules-VirtualBox:~$ sudo service ntp start
 jules@jules-VirtualBox:~$ geth --rinkeby --syncmode "fast" 
-
+```
 Una zez lo he hecho, ya con el getAddr('moyagonzalez.test) ya devuelve mi cuenta
-imagen getAddre_moyagonzalez.png
+![alt text](Imagenes/getAddre_moyagonzalez.png)
 
 
 
-
-//Referencias
+## //Referencias usadas
 https://michalzalecki.com/register-test-domain-with-ens/
 https://medium.com/@codeAMT/registering-test-domains-for-your-dapps-65da98d5386f
 
