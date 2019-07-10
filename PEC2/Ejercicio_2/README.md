@@ -55,12 +55,7 @@ to get started, enter:
 jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
 Hello and Welcome to IPFS!
 ```
-██╗██████╗ ███████╗███████╗
-██║██╔══██╗██╔════╝██╔════╝
-██║██████╔╝█████╗  ███████╗
-██║██╔═══╝ ██╔══╝  ╚════██║
-██║██║     ██║     ███████║
-╚═╝╚═╝     ╚═╝     ╚══════╝
+
 ![Alt text](Imagenes/IPFS_logo.png "IPFS instalado")
 ```
 If you're seeing this, you have successfully installed
@@ -106,7 +101,7 @@ Daemon is ready
 //Ahora ya estamos corriendo un nodo de ipfs.
 //Desde otro terminal se pudedn ver a los nodos a los que estoy conectado:
 //<transport address>/ipfs/<hash-of-public-key>.
-
+```
 jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs swarm peers
 /ip4/113.105.170.13/tcp/14007/ipfs/QmZRdTTKnPNSx7fF6AbAMa2Abf5zUbBzw96n3xStDDzxsQ
 /ip4/113.105.170.232/tcp/24005/ipfs/QmRR1HW5cpppDuc9CHkewq3szT1ix1d3ski4DTT1bngnGS
@@ -114,10 +109,11 @@ jules@jules-VirtualBox:~/Descargas/go-ipfs$ ipfs swarm peers
 /ip4/113.105.170.8/tcp/14007/ipfs/QmT92suW4BnZE5jYqjQiykjUeE4QTNqVTCutmN5Lp2Qpte
 /ip4/114.230.67.186/tcp/33091/ipfs/QmbYThJrLyuKX5YzkWwrgH7hjVfiqLcrN7oruGGcqzXmjm
 /ip4/115.238.154.84/tcp/20850/ipfs/QmUNDRAoykdF98kZZHJ5u6QpzMgxJbUcWUDtbAW2HBLiJR
+```
 .....
 .....
 
-```
+
 
 Para añadir el proyecto pet-shop, con el siguiente comando, seguidamente se van añadiendo los hasesh resultantes a los ficheros que he subido.
 Hay que añadir en la misma carpeta todos los ficheros que ejecuta la web, los .json de lo contracts, los .js y las imagenes.
@@ -150,8 +146,8 @@ added QmZQp29tbdppjqyixxM8L8NjsG4paN4eVW9GxZYicXov9v src/truffle-contract.js
 added QmdTtsVM7KtvycQ68f9M43N4EQKvbd58q8aeAhP2fMz4Di src/web3.min.js
 added Qmb3fJpXVGvUnNeRLC3P5sTXMzjpf5zq4tKt9XjhtYFf1k src/fonts
 added QmTT89hDJJa3adFKv5g82wCMhBWSLVtho6MKFrCxxNk9VB src
-
 ```
+
 
 EL ultimo hash es el que va a ejecutar el fichero index.html, con el que hacer referencia en la url
 
