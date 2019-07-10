@@ -1,13 +1,16 @@
 
 Lanzar la red rinkeby con esa cuenta:
+```
 geth --unlock "0xa6be4ff596c2cad0f17e34655a9b421e435117f1" --rinkeby --syncmode fast --cache 1024 --rpc
-
+```
 
 despeus me posiciono en el proyecto de pet-shop y hago un 
+```
 truffle migrate --network rinkeby
-
 jules@jules-VirtualBox:~/pet-shop-tutorial$ truffle migrate --network rinkeby
+```
 
+```
 Compiling your contracts...
 ===========================
 > Everything is up to date, there is nothing to compile.
@@ -122,3 +125,4 @@ Summary
 > Total deployments:   2
 > Final cost:          0.0099792 ETH
 
+```
