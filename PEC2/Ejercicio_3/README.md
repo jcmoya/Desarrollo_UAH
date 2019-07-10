@@ -64,13 +64,13 @@ Desde otro ternminal lanzas geth para interactuar con swarm:
 ```
 jules@jules-VirtualBox:~/Escritorio$ geth attach $HOME/.ethereum/bzzd.ipc
 Welcome to the Geth JavaScript console!
-```
+
 instance: swarm/v0.4.2-3cdc45ee/linux-amd64/go1.11.5  
 modules: accounting:1.0 admin:1.0 bzz:1.0 chequebook:1.0 debug:1.0 hive:1.0 pss:1.0 rpc:1.0 stream:1.0 swarmfs:1.0 web3:1.0
+```
 
 
-
-Después se crea el fichero .html donde se hace referencia a los dos ficheros que voy a referenciar, una imagen y un texto. Y
+Después, se crea el fichero ".html" donde se hace referencia a los dos ficheros que voy a usa: una imagen y un texto. Y
  que voy a subir a Swarm.:
 
 ```html
@@ -93,7 +93,7 @@ Seguidamente se crea una carpeta donde se va a contener el .html, y dento otras 
 ![Alt Text](Imagenes/Ficheros_Swarm.png "Ficheros creados")  
 
 Desde el terminal, y posicionándome donde estan las carpetas se hace uso del comando de subida de swarm a la red más --recursive, que subira todo el contenido que esta contenido dentro de la carpeta, y --encrypt para encripar el contenido, tal como dice el enunciado.  
-Esto devolvera un hash univoco del contenido:
+Esto devolvera un hash unívoco del contenido:
 
 ```
 jules@jules-VirtualBox:~/Escritorio$ swarm --defaultpath Test_Swarm/Ejercicio3.html --recursive up --encrypt Test_Swarm  
@@ -113,7 +113,7 @@ Para acceder directamente con el hash que devuelve swarm se tiene que subir los 
 De la siguiente manera ya reconoceria directamente el .html
 
 
-Con el *cdfaultpath* de esa manera se podría usar sin indicarle el .html:
+Con el *defaultpath* de esa manera se podría usar sin indicarle el .html:
 http://localhost:8500/bzz:/27f9782edaac4b92b10b0b0046b7fb69c6800d08037297786a8bc7b93bf203e5de3a3820b2f5b9c98d3b748aedbaa60f3e6a493d7627e114c34577a0528d2590
 
 
