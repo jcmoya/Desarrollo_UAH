@@ -76,13 +76,14 @@ swarm --datadir='/home/jules/.ethereum/rinkeby/' --ens-api 'test:0xe7410170f8710
 Desde otro terminal, añades el contenido de petshop a swarm:
 ```
 jules@jules-VirtualBox:~/Escritorio/pet-shop-tutorial$ swarm --defaultpath src/index.html --recursive up src
-a09224edc8278b025bdefe35339c40c32b696b7e71e4c230a6bfc01acebcfa05
+afe86bcd62f5975c673ef74bd2c83074450fd0fc420ab128ab4c7fb8e896c499
+
 ```
 
 Desde el cliente de geth asignas el domino a la direccion de swarm, usando la *misma* cuenta.
 ```
-> publicResolver.setContent(namehash('moyagonzalez.test'), '0xa09224edc8278b025bdefe35339c40c32b696b7e71e4c230a6bfc01acebcfa05', {from: eth.accounts[0]})
-"0x0987ba67cc87ffbcb01fc234bf4187b188af73e583a2fedefe3a97cdcf8e4e56"
+> publicResolver.setContent(namehash('moyagonzalez.test'), 'afe86bcd62f5975c673ef74bd2c83074450fd0fc420ab128ab4c7fb8e896c499', {from: eth.accounts[0]})
+"0x1161c7ce4786d20be1031bafec49e3ef3d53fa0201a14cbe53fcc0b6553a2c01"
 ```
 Ya desde el navegador se podria acceder a la dapp y poder usar metamask para poder hacer pagos:
 
