@@ -146,6 +146,13 @@ la consola del cliente Geth y demuestre cómo lo ha obtenido. No use la función
 ```
  geth --rinkeby //Para lanzar el cliente geth con la blockchain de rinkeby
 
+ geth --rinkeby --syncmode "fast" --rpc --rpcapi db,eth,net,web3,personal --cache=1024 --rpcport 8545 --rpcaddr 127.0.0.1 --rpccorsdomain "*"
+
+ Si tuvieras que matar algun proceso que se hubiera quedado por debajo:
+ jules@jules-VirtualBox:~$ ps aux
+jules@jules-VirtualBox:~$ kill -9 2249
+
+
   //Deste otro terminal
 jules@jules-VirtualBox:~$ geth --datadir='/home/jules/.ethereum/rinkeby' attach  ipc:'/home/jules/.ethereum/rinkeby/geth.ipc' console
 Welcome to the Geth JavaScript console!
